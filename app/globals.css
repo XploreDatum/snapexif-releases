@@ -236,10 +236,11 @@ img { display: block; max-width: 100%; }
 }
 .layout-card:hover { border-color: var(--surface-3); background: var(--surface-2); }
 .layout-card .preview {
-  aspect-ratio: 4/3; background: var(--bg);
+  aspect-ratio: 5/4; background: var(--bg);
   border-radius: 8px; margin-bottom: 16px;
-  display: grid; place-items: center; padding: 18px; overflow: hidden; position: relative;
+  display: grid; place-items: stretch; padding: 14px; overflow: hidden; position: relative;
 }
+.layout-card .preview > .lf { align-self: center; }
 .layout-card .meta { display: flex; justify-content: space-between; align-items: baseline; }
 .layout-card .name { font-weight: 600; font-size: 15px; }
 .layout-card .desc { font-size: 12px; color: var(--muted); font-family: var(--font-geist-mono), monospace; }
