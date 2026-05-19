@@ -85,7 +85,7 @@ function Nav() {
           <span className="brand-mark">
             <Image src="/snapexif-logo.png" alt="" width={28} height={28} />
           </span>
-          <span>SnapExif</span>
+          <span className="wordmark">Snapexif</span>
           <span className="badge mono" style={{ marginLeft: 4 }}>v1.0</span>
         </a>
         <div className="nav-links">
@@ -414,7 +414,7 @@ function Footer() {
           <span className="brand-mark" style={{ width: 24, height: 24, borderRadius: 6 }}>
             <Image src="/snapexif-logo.png" alt="" width={24} height={24} />
           </span>
-          <span style={{ color: "var(--fg)", fontWeight: 600 }}>SnapExif</span>
+          <span className="wordmark" style={{ color: "var(--fg)", fontSize: 18 }}>Snapexif</span>
           <span className="mono" style={{ color: "var(--dim)" }}>v1.0</span>
         </div>
         <div className="footer-links">
