@@ -106,7 +106,7 @@ function Hero() {
   return (
     <section className="section hero">
       <div className="wrap">
-        <div className="hero-stack">
+        <div className="hero-grid">
           <div className="hero-text">
             <div className="hero-badges">
               <span className="badge"><span className="dot" />VERSION 1.0</span>
@@ -117,7 +117,7 @@ function Hero() {
               Frame the <span style={{ color: "var(--accent)" }}>moment</span>,
               not the file.
             </h1>
-            <p className="lead" style={{ marginTop: 28 }}>
+            <p className="lead" style={{ marginTop: 22 }}>
               SnapExif batch-watermarks photos with magazine-style camera frames.
               Six editorial layouts, forty-plus camera brands, full native
               resolution — EXIF preserved end-to-end.
@@ -319,7 +319,9 @@ function Features() {
         <div className="grid-3">
           {items.map((it, i) => (
             <div className="feature" key={i}>
-              {it.k ? <div className="big-num">{it.k}</div> : <div className="ix">{it.ix}</div>}
+              <div className="tag">
+                {it.k ? <div className="big-num">{it.k}</div> : <div className="ix">{it.ix}</div>}
+              </div>
               <h3>{it.t}</h3>
               <p>{it.d}</p>
             </div>
@@ -344,32 +346,60 @@ function Pricing() {
             five Macs. No tiers, no team plans, no per-photo charges.
           </div>
         </div>
-        <div className="pricing-card">
-          <span className="badge badge-accent" style={{ marginBottom: 18 }}>
-            3-DAY FREE TRIAL · NO CARD
-          </span>
-          <div className="price">
-            <b>$19</b>
-            <small>USD · one-time</small>
+        <div className="pricing-wrap">
+          <div className="pricing-card">
+            <span className="badge badge-accent" style={{ marginBottom: 18 }}>
+              3-DAY FREE TRIAL · NO CARD
+            </span>
+            <div className="price">
+              <b>$19</b>
+              <small>USD · one-time</small>
+            </div>
+            <ul>
+              <li><span className="tick">✓</span>Unlimited photos, unlimited folders</li>
+              <li><span className="tick">✓</span>All six editorial layouts</li>
+              <li><span className="tick">✓</span>40+ auto-detected camera brands</li>
+              <li><span className="tick">✓</span>Full-resolution output, EXIF preserved</li>
+              <li><span className="tick">✓</span>Up to 5 Macs per license</li>
+              <li><span className="tick">✓</span>Every future v1.x update</li>
+              <li><span className="tick">✓</span>14-day refund, no questions</li>
+            </ul>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+              <a href={DOWNLOAD_URL} className="btn btn-ghost btn-lg" style={{ justifyContent: "center" }}>
+                <DownloadGlyph /> Download
+              </a>
+              <a href={CHECKOUT_URL} className="btn btn-primary btn-lg" style={{ justifyContent: "center" }}>
+                Buy — $19
+              </a>
+            </div>
+            <div className="fine">SECURE CHECKOUT BY DODO PAYMENTS</div>
           </div>
-          <ul>
-            <li><span className="tick">✓</span>Unlimited photos, unlimited folders</li>
-            <li><span className="tick">✓</span>All six editorial layouts</li>
-            <li><span className="tick">✓</span>40+ auto-detected camera brands</li>
-            <li><span className="tick">✓</span>Full-resolution output, EXIF preserved</li>
-            <li><span className="tick">✓</span>Up to 5 Macs per license</li>
-            <li><span className="tick">✓</span>Every future v1.x update</li>
-            <li><span className="tick">✓</span>14-day refund, no questions</li>
-          </ul>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-            <a href={DOWNLOAD_URL} className="btn btn-ghost btn-lg" style={{ justifyContent: "center" }}>
-              <DownloadGlyph /> Download
-            </a>
-            <a href={CHECKOUT_URL} className="btn btn-primary btn-lg" style={{ justifyContent: "center" }}>
-              Buy — $19
-            </a>
+
+          <div className="pricing-aside">
+            <h4>How it works</h4>
+            <div className="row">
+              <span className="glyph">01</span>
+              <span>Download SnapExif and start the 3-day trial. No card.</span>
+            </div>
+            <div className="row">
+              <span className="glyph">02</span>
+              <span>Process unlimited photos with every layout, full resolution.</span>
+            </div>
+            <div className="row">
+              <span className="glyph">03</span>
+              <span>Like it? Buy a license. Paste the key. You&apos;re unlocked forever.</span>
+            </div>
+            <div className="row">
+              <span className="glyph">04</span>
+              <span>Use on up to 5 Macs you own. Every future v1.x update included.</span>
+            </div>
           </div>
-          <div className="fine">SECURE CHECKOUT BY DODO PAYMENTS</div>
+        </div>
+
+        <div className="proof">
+          <span className="lbl">Built by photographers, for photographers</span>
+          <span className="stars">★★★★★</span>
+          <q>Finally a watermark tool that respects my pixels.</q>
         </div>
       </div>
     </section>
