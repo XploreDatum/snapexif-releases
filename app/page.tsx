@@ -449,13 +449,14 @@ function Footer() {
         </div>
         <div className="footer-links">
           <a href="mailto:hello@snapexif.com">hello@snapexif.com</a>
+          <a href="mailto:feedback@snapexif.com">feedback@snapexif.com</a>
+          <a href="mailto:contact@snapexif.com">contact@snapexif.com</a>
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
           <a href="https://github.com/XploreDatum/snapexif-releases">Releases</a>
         </div>
         <div className="mono" style={{ color: "var(--dim)", fontSize: 12 }}>
-          © 2026 Xploredatum · Made with light
-        </div>
+          Made with <span style={{ color: "var(--accent)" }}>♥</span> in Keralam by Xploredatum · © 2026</div>
       </div>
     </footer>
   );
