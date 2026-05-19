@@ -279,7 +279,7 @@ img { display: block; max-width: 100%; }
   gap: 4%;
   align-items: center;
 }
-.lf-leica .left { font-family: var(--font-geist-sans), system-ui, sans-serif; }
+.lf-leica .left { font-family: var(--font-inter), system-ui, sans-serif; }
 .lf-leica .left b { display: block; font-weight: 800; font-size: clamp(7px, 1.5vw, 10px); letter-spacing: 0.06em; }
 .lf-leica .left small { font-size: clamp(5px, 1vw, 7px); color: #6b6b6b; }
 .lf-leica .center { font-size: clamp(6px, 1.2vw, 8px); color: #333; text-align: center; }
@@ -328,7 +328,7 @@ img { display: block; max-width: 100%; }
 .lf-pol .flap {
   position: absolute; left: 6%; right: 6%; bottom: 4%;
   text-align: center; color: #1a1a1a;
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
 .lf-pol .flap .logo {
   width: 22px; height: 22px; border-radius: 5px; margin: 0 auto 4px;
