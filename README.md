@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Snapexif — Website
 
-## Getting Started
+The marketing site + license-verification API for [SnapExif](https://snapexif.com).
 
-First, run the development server:
+## Stack
+- Next.js 16 App Router · TypeScript · Tailwind CSS v4
+- Deployed to Vercel
+- License server proxy: `/api/license/verify` → Dodo Payments
 
-```bash
+## Local dev
+
+```sh
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then visit http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment variables (set in Vercel)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable | Description |
+|----------|-------------|
+| `DODO_API_KEY` | Live API key from Dodo dashboard |
+| `DODO_PRODUCT_ID` | `pdt_0NfBt7eUi120qMFvjJLCu` (default) |
+| `DODO_API_BASE` | Override Dodo API base URL (optional) |
+| `NEXT_PUBLIC_DODO_CHECKOUT_URL` | Optional explicit buy link |
 
-## Learn More
+## License verify API
 
-To learn more about Next.js, take a look at the following resources:
+`POST /api/license/verify`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```json
+{ "licenseKey": "DODO-XXXX-XXXX", "instanceId": "<machine-uuid>" }
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Response (success):
+```json
+{ "ok": true, "status": "active", "email": "user@example.com", "productId": "pdt_..." }
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The macOS app calls this from its License preference pane and persists the result
+into Keychain.
