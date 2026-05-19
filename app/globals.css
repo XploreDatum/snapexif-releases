@@ -145,9 +145,10 @@ img { display: block; max-width: 100%; }
 .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
 
 /* hero */
-.hero { padding-top: 80px; padding-bottom: 80px; position: relative; }
-.hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; }
-@media (max-width: 980px) { .hero-grid { grid-template-columns: 1fr; gap: 48px; } }
+.hero { padding-top: 80px; padding-bottom: 60px; position: relative; }
+.hero-stack { display: flex; flex-direction: column; gap: 56px; align-items: stretch; }
+.hero-text { max-width: 760px; }
+.hero-shot-wrap { width: 100%; }
 .hero-cta { display: flex; gap: 12px; align-items: center; margin-top: 36px; flex-wrap: wrap; }
 .hero-meta {
   display: flex; gap: 20px; margin-top: 28px;
@@ -166,17 +167,19 @@ img { display: block; max-width: 100%; }
 }
 .hero > * { position: relative; z-index: 1; }
 
-/* hero screenshot */
+/* hero screenshot — large, theme-swapped */
 .shot-frame {
-  border-radius: 14px; overflow: hidden;
+  border-radius: 16px; overflow: hidden;
   border: 1px solid var(--border); background: var(--surface);
   box-shadow: var(--shadow-2);
-  transform: perspective(1800px) rotateY(-3deg) rotateX(2deg);
-  transform-origin: center center;
-  transition: transform .6s cubic-bezier(.2,.7,.2,1);
+  position: relative;
 }
-.shot-frame:hover { transform: perspective(1800px) rotateY(0) rotateX(0); }
 .shot-frame img { width: 100%; height: auto; display: block; }
+
+/* theme-driven swap: only one screenshot is rendered at a time */
+.shot-dark, .shot-light { display: none; }
+:root[data-theme="dark"]  .shot-dark  { display: block; }
+:root[data-theme="light"] .shot-light { display: block; }
 
 /* paired screenshots block */
 .shot-pair {

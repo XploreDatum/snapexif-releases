@@ -61,7 +61,6 @@ export default function Page() {
       <div className="grain" aria-hidden />
       <Nav />
       <Hero />
-      <ScreenshotPair />
       <LayoutsSection />
       <HowItWorks />
       <Features />
@@ -107,19 +106,18 @@ function Hero() {
   return (
     <section className="section hero">
       <div className="wrap">
-        <div className="hero-grid">
-          <div>
+        <div className="hero-stack">
+          <div className="hero-text">
             <div className="hero-badges">
               <span className="badge"><span className="dot" />VERSION 1.0</span>
               <span className="badge">macOS 13+</span>
               <span className="badge badge-accent">3-DAY FREE TRIAL</span>
             </div>
             <h1 className="h1">
-              Frame the<br />
-              <span style={{ color: "var(--accent)" }}>moment</span>,<br />
+              Frame the <span style={{ color: "var(--accent)" }}>moment</span>,
               not the file.
             </h1>
-            <p className="lead" style={{ marginTop: 32 }}>
+            <p className="lead" style={{ marginTop: 28 }}>
               SnapExif batch-watermarks photos with magazine-style camera frames.
               Six editorial layouts, forty-plus camera brands, full native
               resolution — EXIF preserved end-to-end.
@@ -137,13 +135,22 @@ function Hero() {
             </div>
           </div>
 
-          <div>
+          <div className="hero-shot-wrap">
             <div className="shot-frame">
               <Image
                 src="/screenshot-dark.png"
-                alt="SnapExif app showing live preview and layout picker"
+                alt="SnapExif app — dark mode"
                 width={2400}
                 height={1500}
+                className="shot-dark"
+                priority
+              />
+              <Image
+                src="/screenshot-light.png"
+                alt="SnapExif app — light mode"
+                width={2400}
+                height={1500}
+                className="shot-light"
                 priority
               />
             </div>
