@@ -182,12 +182,14 @@ img { display: block; max-width: 100%; }
   box-shadow: var(--shadow-2);
   position: relative;
 }
-.shot-frame img { width: 100%; height: auto; display: block; }
+.shot-frame img { width: 100%; height: auto; }
 
-/* theme-driven swap: only one screenshot is rendered at a time */
-.shot-dark, .shot-light { display: none; }
-:root[data-theme="dark"]  .shot-dark  { display: block; }
-:root[data-theme="light"] .shot-light { display: block; }
+/* Theme-driven swap. Specificity must beat `.shot-frame img` (0,1,1), so use
+   `.shot-frame img.shot-{x}` (0,2,1) to declare display. */
+.shot-frame img.shot-dark,
+.shot-frame img.shot-light { display: none; }
+:root[data-theme="dark"]  .shot-frame img.shot-dark  { display: block; }
+:root[data-theme="light"] .shot-frame img.shot-light { display: block; }
 
 /* paired screenshots block */
 .shot-pair {
