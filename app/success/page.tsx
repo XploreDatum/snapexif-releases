@@ -59,7 +59,7 @@ export default function SuccessPage({ searchParams }: { searchParams: { key?: st
 
       <div className="flex flex-wrap gap-3">
         <a
-          href="https://github.com/xploredatum/snapexif-releases/releases/latest"
+          href="https://github.com/XploreDatum/snapexif-releases/releases/latest/download/SnapExif.dmg"
           className="bg-[var(--accent)] text-white px-6 py-3 rounded-lg font-semibold shadow-[0_8px_24px_-8px_var(--accent)] hover:opacity-95 transition-opacity"
         >
           Download SnapExif
